@@ -4,6 +4,8 @@ require "json"
 
 Dir["#{File.dirname(__FILE__)}/name-stapler/**/*.rb"].each {|f| require f}
 
+raise "name-stapler needs Ruby >= 1.9.1" if RAILS_VERSION < "1.9.1"
+
 class NameStapler
   def initialize(link_source)
     @link_source = link_source
